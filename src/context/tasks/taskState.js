@@ -43,7 +43,7 @@ const TaskState = props => {
         //console.log(task)
         try {
             const result = await axiosClient.post('/api/tasks', task);
-            //console.log(result)
+            console.log(result)
             dispatch({
                 type: ADD_TASKS,
                 payload: task

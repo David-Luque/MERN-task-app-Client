@@ -31,9 +31,9 @@ const ListTask = () => {
                 {projectTasks.length === 0
                     ? (<li className="task"> <p>No pending tasks</p> </li>)
                     : <TransitionGroup>
-                        {projectTasks.map(task => (
+                        {projectTasks.map((task, index) => (
                             <CSSTransition 
-                                key={task.id}
+                                key={index}
                                 timeout={200}
                                 classNames="task"
                             >
