@@ -36,7 +36,7 @@ const AuthState = ({ children }) => {
             //get user
             authenticateUser();
         } catch (error) {
-            console.log(error.response);
+            //console.log(error.response);
             const alert = {
                 msg: error.response.data.msg,
                 category: 'alert-error'
