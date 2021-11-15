@@ -28,7 +28,7 @@ const ProjectList = () => {
     if(projects.length === 0) return <p>No projects. Create the first one</p>;
 
     return (
-        <ul className="list-projects">
+        <ul data-cy="projects-list" className="list-projects">
 
             {alert ? (
                 <div className={`alert ${alert.category}`}> {alert.msg} </div>

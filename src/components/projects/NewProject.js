@@ -44,6 +44,7 @@ const NewProject = () => {
     return (
         <Fragment>
             <button
+                data-cy="btn-new-project"
                 type="button"
                 className="btn btn-block btn-primary"
                 onClick={()=> {showForm()}}
@@ -57,6 +58,7 @@ const NewProject = () => {
                     onSubmit={handleSubmit}
                 >
                     <input
+                        data-cy="input-new-project"
                         type="text"
                         name="name"
                         className="input-text"
@@ -66,6 +68,7 @@ const NewProject = () => {
                     />
                     
                     <input
+                        data-cy="submit-new-project"
                         type="submit"
                         className="btn btn-block btn-primary"
                         value="Add project"
@@ -74,7 +77,7 @@ const NewProject = () => {
             ) : null }
 
             { formError 
-                ? (<p className="message error">You must provide a valid name</p>)
+                ? (<p data-cy="alert"className="message error">You must provide a project name</p>)
                 : null
             }
         </Fragment>  

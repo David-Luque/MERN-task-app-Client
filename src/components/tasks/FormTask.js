@@ -82,6 +82,7 @@ const FormTask = () => {
             >
                 <div className="container-input">
                     <input
+                        data-cy="input-task"
                         type="text"
                         className="input-text"
                         name="name"
@@ -92,6 +93,7 @@ const FormTask = () => {
                 </div>
                 <div className="container-input">
                     <input
+                        data-cy="submit-task"
                         type="submit"
                         className="btn btn-primary btn-submit btn-block"
                         value={selectedTask ? 'Edit task' : 'Add task'}
@@ -99,7 +101,7 @@ const FormTask = () => {
                 </div>
             </form>
 
-            { taskError ? <p className="message error">Task name is required</p> : null }
+            { taskError ? <p data-cy="alert" className="message error">Task name is required</p> : null }
 
         </div>
         

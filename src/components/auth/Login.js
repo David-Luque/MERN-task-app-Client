@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AlertContext from '../../context/alerts/alertContext';
 import AuthContext from '../../context/autentication/authContext';
+import Alert from '../layout/Alert';
 
 const Login = (props) => {
 
@@ -57,19 +58,20 @@ const Login = (props) => {
 
     return (
         <div className="form-user">
-            <div className="container-form shadow-dark">
-                <h1>Login</h1>
 
-                { alert ? (
-                    <div className={`alert ${alert.category}`}> {alert.msg} </div>
-                ) : null }
+            <div className="container-form shadow-dark">
+                <h1 data-cy="login-title">Login</h1>
+
+                <Alert alert={alert} />
 
                 <form
+                    data-cy="login-form"
                     onSubmit={handleSubmit}
                 >
                     <div className="field-form">
                         <label htmlFor="email">Email</label>
                         <input
+                            data-cy="email-input"
                             type="email"
                             id="email"
                             name="email"
@@ -81,6 +83,7 @@ const Login = (props) => {
                     <div className="field-form">
                         <label htmlFor="password">Password</label>
                         <input
+                            data-cy="password-input"
                             type="password"
                             id="password"
                             name="password"
@@ -91,6 +94,7 @@ const Login = (props) => {
                     </div>
                     <div className="field-form">
                         <input
+                            data-cy="login-submit"
                             type="submit"
                             className="btn btn-primary btn-block"
                             value="Login"
@@ -98,8 +102,11 @@ const Login = (props) => {
                     </div>
                 </form>
 
-                <Link to={"/new-account"} className="link-account">
-                    Create new account
+                <Link 
+                    data-cy="signup-link"
+                    to={"/new-account"} 
+                    className="link-account"
+                > Create new account
                 </Link>
             </div>
         </div>

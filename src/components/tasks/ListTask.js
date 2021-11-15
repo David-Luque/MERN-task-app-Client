@@ -14,7 +14,7 @@ const ListTask = () => {
     const tasksContext = useContext(taskContext);
     const { projectTasks } = tasksContext;
 
-    if(!project) return <h2>Select any project</h2>;
+    if(!project) return <h2 data-cy="select-title">Select any project</h2>;
 
     const [ actualProject ] = project;
 

@@ -34,13 +34,14 @@ const Task = ({ taskInfo }) => {
 
 
     return (
-        <li className="task shadow">
+        <li data-cy="task" className="task shadow">
             <p>{taskInfo.name}</p>
 
             <div className="status">
                 {taskInfo.isCompleted
                     ? (
                         <button
+                            data-cy="btn-task-complete"
                             type="button"
                             className="complete"
                             onClick={()=>{changeTaskState(taskInfo)}}
@@ -50,6 +51,7 @@ const Task = ({ taskInfo }) => {
                     )
                     : (
                         <button
+                            data-cy="btn-task-incomplete"
                             type="button"
                             className="incomplete"
                             onClick={()=>{changeTaskState(taskInfo)}}
@@ -61,6 +63,7 @@ const Task = ({ taskInfo }) => {
             </div>
             <div className="actions">
                 <button
+                    data-cy="btn-task-edit"
                     type="button"
                     className="btn btn-primary"
                     onClick={() => {addTaskToEdit(taskInfo)}}
@@ -69,6 +72,7 @@ const Task = ({ taskInfo }) => {
                 </button>
                 
                 <button
+                    data-cy="btn-task-delete"
                     type="button"
                     className="btn btn-secondary"
                     onClick={() => removeTask(taskInfo._id)}

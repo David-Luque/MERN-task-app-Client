@@ -29,7 +29,6 @@ const AuthState = ({ children }) => {
     const registerUser = async data => {
         try {
             const response = await axiosClient.post('/api/users', data);
-            //console.log(response.data);
             dispatch({
                 type: SUCCESS_REGIST,
                 payload: response.data
@@ -64,7 +63,6 @@ const AuthState = ({ children }) => {
                 payload: response.data.user
             });
         } catch (error) {
-            //console.log(error.response);
             dispatch({
                 type: FAILURE_LOGIN
             });
@@ -75,7 +73,6 @@ const AuthState = ({ children }) => {
     const sessionLogin = async data => {
         try {
             const response = await axiosClient.post('/api/auth', data);
-            //console.log(response)
             dispatch({
                 type: SUCCESS_LOGIN,
                 payload: response.data
@@ -83,7 +80,7 @@ const AuthState = ({ children }) => {
             //get user
             authenticateUser();
         } catch (error) {
-            //console.log(error.response);
+            console.log(error.response);
             let alert;
             if(error.response.data.msg) {
                 alert = {
