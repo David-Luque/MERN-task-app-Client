@@ -82,7 +82,7 @@ const NewAccount = (props) => {
             <div className="container-form shadow-dark">
                 <h1
                     data-cy="signup-title"
-                >Create account</h1>
+                > Create account </h1>
 
                 <form
                     data-cy="signup-form"
@@ -155,8 +155,7 @@ const NewAccount = (props) => {
                     data-cy="login-link"
                     to={"/"} 
                     className="link-account"
-                > Do you already have an account?
-                </Link>
+                > Do you already have an account? </Link>
             </div>
         </div>
         

@@ -58,7 +58,6 @@ const Login = (props) => {
 
     return (
         <div className="form-user">
-
             <div className="container-form shadow-dark">
                 <h1 data-cy="login-title">Login</h1>
 
@@ -110,7 +109,6 @@ const Login = (props) => {
                 </Link>
             </div>
         </div>
-        
     );
 }
  

@@ -25,7 +25,9 @@ const ProjectList = () => {
     }, [message])
 
     //check in "projects" has content
-    if(projects.length === 0) return <p>No projects. Create the first one</p>;
+    if(projects.length === 0) {
+        return <p>No projects. Create the first one</p>
+    };
 
     return (
         <ul data-cy="projects-list" className="list-projects">

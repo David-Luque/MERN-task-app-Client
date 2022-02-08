@@ -36,7 +36,6 @@ const AuthState = ({ children }) => {
             //get user
             authenticateUser();
         } catch (error) {
-            //console.log(error.response);
             const alert = {
                 msg: error.response.data.msg,
                 category: 'alert-error'
@@ -57,7 +56,6 @@ const AuthState = ({ children }) => {
 
         try {
             const response = await axiosClient.get('/api/auth');
-            console.log(response);
             dispatch({
                 type: GET_USER,
                 payload: response.data.user
@@ -80,7 +78,7 @@ const AuthState = ({ children }) => {
             //get user
             authenticateUser();
         } catch (error) {
-            console.log(error.response);
+            //console.log(error.response);
             let alert;
             if(error.response.data.msg) {
                 alert = {

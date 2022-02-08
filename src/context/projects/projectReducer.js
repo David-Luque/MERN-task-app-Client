@@ -8,7 +8,7 @@ import {
     DELETE_PROJECT
 } from '../../types/index';
 
-export default (state, action) => {
+const ProjectReducer = (state, action) => {
     switch(action.type) {
         case NEW_PROJECT_FORM:
             return {
@@ -17,7 +17,6 @@ export default (state, action) => {
             }
         
         case OBTAIN_PROJECTS:
-            console.log(action.payload)
         return {
             ...state,
             projects: action.payload
@@ -59,3 +58,5 @@ export default (state, action) => {
             return state;
     }
 }
+
+export default ProjectReducer;

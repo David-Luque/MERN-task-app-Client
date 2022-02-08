@@ -1,10 +1,10 @@
 import React, { Fragment, useContext, useState } from 'react';
-import projectContext from '../../context/projects/projectContext';
+import ProjectContext from '../../context/projects/projectContext';
 
 const NewProject = () => {
 
     //obtain form state
-    const projectsContext = useContext(projectContext);
+    const projectsContext = useContext(ProjectContext);
     const { form, formError, showForm, addProject, showError } = projectsContext
 
 
@@ -26,7 +26,7 @@ const NewProject = () => {
         e.preventDefault();
         
         //validate
-        if(name === '') {
+        if(name.trim() === '') {
             showError();
             return;
         }
@@ -76,9 +76,9 @@ const NewProject = () => {
                 </form>
             ) : null }
 
-            { formError 
-                ? (<p data-cy="alert"className="message error">You must provide a project name</p>)
-                : null
+            { formError ? (
+                <p data-cy="alert" className="message error"> You must provide a project name </p>
+                ) : null
             }
         </Fragment>  
     );

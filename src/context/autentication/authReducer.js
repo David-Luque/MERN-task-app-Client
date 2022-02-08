@@ -7,7 +7,7 @@ import {
     CLOSE_SESSION
 } from '../../types';
 
-export default (state, action)=>{
+const AuthReducer = (state, action)=>{
     switch(action.type) {
         case CLOSE_SESSION:
         case FAILURE_REGIST:
@@ -42,3 +42,5 @@ export default (state, action)=>{
             return state;
     }
 };
+
+export default AuthReducer;

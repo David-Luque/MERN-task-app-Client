@@ -61,7 +61,6 @@ const ProjectState = props => {
     const addProject = async project => {
         try {
             const result = await axiosClient.post('/api/projects', project);
-            //console.log(result)
             //insert project in state
             dispatch({
                 type: ADD_PROJECT,
@@ -101,10 +100,6 @@ const ProjectState = props => {
     const deleteProject = async projectId => {
         try {
             await axiosClient.delete(`/api/projects/${projectId}`)
-            dispatch({
-                type: DELETE_PROJECT,
-                payload: projectId
-            })
             dispatch({
                 type: DELETE_PROJECT,
                 payload: projectId

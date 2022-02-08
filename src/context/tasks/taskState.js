@@ -80,10 +80,10 @@ const TaskState = props => {
         console.log('PATH: ', `/api/tasks/${task._id}`)
         try {
             const result = await axiosClient.put(`/api/tasks/${task._id}`, task);
-        dispatch({
-            type: UPDATE_TASK,
-            payload: result.data.task
-        }); 
+            dispatch({
+                type: UPDATE_TASK,
+                payload: result.data.task
+            }); 
         } catch (error) {
             console.log(error);
         }
