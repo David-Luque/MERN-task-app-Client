@@ -15,13 +15,11 @@ const ProjectReducer = (state, action) => {
                 ...state,
                 form: true
             }
-        
         case OBTAIN_PROJECTS:
         return {
             ...state,
             projects: action.payload
         }
-
         case ADD_PROJECT:
             return {
                 ...state,
@@ -29,19 +27,16 @@ const ProjectReducer = (state, action) => {
                 form: false,
                 formError: false
             }
-
         case VALIDATE_FORM:
             return {
                 ...state,
                 formError: true
             }
-
         case ACTUAL_PROJECT:
             return {
                 ...state,
                 project: state.projects.filter(project => project._id === action.payload)
             }
-
         case DELETE_PROJECT:
             return {
                 ...state,
@@ -53,7 +48,6 @@ const ProjectReducer = (state, action) => {
                 ...state,
                 message: action.payload
             }
-
         default:
             return state;
     }

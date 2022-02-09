@@ -15,10 +15,7 @@ const AlertState = props => {
     const showAlert = (msg, category)=>{
         dispatch({
             type: SHOW_ALERT,
-            payload: {
-                msg,
-                category
-            }
+            payload: { msg, category }
         });
 
         setTimeout(()=>{
@@ -28,7 +25,6 @@ const AlertState = props => {
         }, 5000)
     };
 
-    
     return(
         <alertContext.Provider
             value={{

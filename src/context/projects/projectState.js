@@ -43,8 +43,7 @@ const ProjectState = props => {
                 payload: results.data.projects
             })
         } catch (error) {
-            console.log(error);
-
+            //console.log(error.response);
             const alert = {
                 msg: 'There was an error',
                 category: 'alert-error'
@@ -67,8 +66,7 @@ const ProjectState = props => {
                 payload: result.data
             });
         } catch (error) { 
-            console.log(error);
-
+            //console.log(error.response);
             const alert = {
                 msg: 'There was an error',
                 category: 'alert-error'
@@ -105,8 +103,7 @@ const ProjectState = props => {
                 payload: projectId
             })
         } catch (error) {
-            console.log(error);
-
+            //console.log(error.response);
             const alert = {
                 msg: 'There was an error',
                 category: 'alert-error'

@@ -8,9 +8,8 @@ import {
     CLEAN_TASK
 } from '../../types/index';
 
-export default (state, action) => {
+const TaskReducer = (state, action) => {
      switch(action.type) {
-        
         case PROJECT_TASKS:
             return {
                 ...state,
@@ -52,3 +51,5 @@ export default (state, action) => {
              return state;
      }
 };
+
+export default TaskReducer;
