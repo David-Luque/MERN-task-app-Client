@@ -17,12 +17,31 @@ const ListTask = () => {
     if(!project) return <h2 data-cy="select-title">Select any project</h2>;
 
     const [ actualProject ] = project;
-
-
-    const deleteCurrentProject = ()=>{
-        deleteProject(actualProject._id)
-    };
     
+    // const renderTasks = ()=>{
+    //     if(projectTasks.length === 0) {
+    //         return (
+    //             <p> No pending tasks </p>
+    //         );
+    //     } else {
+    //         return (
+    //             <ul className="list-tasks">
+    //                 <TransitionGroup>
+    //                     {projectTasks.map((task, index) => (
+    //                         <CSSTransition 
+    //                             key={index}
+    //                             timeout={200}
+    //                             classNames="task"
+    //                         >
+    //                             <Task {...task}/>
+    //                         </CSSTransition>
+    //                     ))}
+    //                 </TransitionGroup>
+    //             </ul> 
+    //         );
+    //     }
+    // };
+
 
     return (
         <Fragment>
@@ -47,7 +66,7 @@ const ListTask = () => {
             <button
                 type="button"
                 className="btn btn-delete"
-                onClick={deleteCurrentProject}
+                onClick={() => deleteProject(actualProject._id)}
             >
                 Delete project &times;
             </button>

@@ -20,11 +20,6 @@ const Task = ({ taskInfo }) => {
 
     const changeTaskState = task => {
         task.isCompleted = !task.isCompleted;
-        // if(task.isCompleted === false) {
-        //     task.isCompleted = true
-        // } else {
-        //     task.isCompleted = false
-        // }
         updateTask(task);
     };
 
@@ -64,7 +59,7 @@ const Task = ({ taskInfo }) => {
             <div className="actions">
                 <button
                     data-cy="btn-task-edit"
-                    type="button"
+                    //type="button"
                     className="btn btn-primary"
                     onClick={() => {addTaskToEdit(taskInfo)}}
                 >
@@ -73,7 +68,7 @@ const Task = ({ taskInfo }) => {
                 
                 <button
                     data-cy="btn-task-delete"
-                    type="button"
+                    // type="button"
                     className="btn btn-secondary"
                     onClick={() => removeTask(taskInfo._id)}
                 >

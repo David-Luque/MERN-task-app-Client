@@ -15,6 +15,11 @@ const Header = () => {
         //eslint-disable-next-line
     }, []);
 
+    const endSession = ()=>{
+        closeSession();
+        history.push('/');
+    };
+
 
     return (
         <header className="app-header">
@@ -23,10 +28,7 @@ const Header = () => {
                 <button
                     data-cy="btn-logout"
                     className="btn btn-blank close-session"
-                    onClick={() => {
-                        closeSession();
-                        history.push('/');
-                    }}
+                    onClick={ endSession }
                 >
                     Log out
                 </button>

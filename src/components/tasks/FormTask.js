@@ -37,17 +37,13 @@ const FormTask = () => {
 
 
     const handleChange = e => {
-        const { name, value } = e.target;
-        setTask({
-            ...task,
-            [name]: value
-        })
+        setTask(e.target.value)
     };
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        //validate
+        //validate task name
         if(name.trim() === '') {
             validateTask();
             return;
