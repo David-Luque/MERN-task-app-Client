@@ -34,7 +34,7 @@ const TaskState = props => {
                 payload: result.data.tasks
             })
         } catch (error) {
-            console.log(error)
+            console.log(error.response)
         }
     };
 
@@ -50,7 +50,7 @@ const TaskState = props => {
             });
             
         } catch (error) {
-            
+            console.log(error.response)
         }
     };
 
@@ -76,8 +76,6 @@ const TaskState = props => {
 
     //update completed task status
     const updateTask = async task => {
-        console.log('TASK TO UPDATE: ', task)
-        console.log('PATH: ', `/api/tasks/${task._id}`)
         try {
             const result = await axiosClient.put(`/api/tasks/${task._id}`, task);
             dispatch({
